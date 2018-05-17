@@ -196,7 +196,7 @@ li.poll-result .poll-image {
 
 .survey-table thead tr td,
 .survey-table thead tr th {
-    font-weight: bold;
+    font-weight: normal;
     font-size: .9rem;
 }
 
@@ -230,12 +230,12 @@ th.survey-answer {
 }
 
 .survey-percentage {
-    font-weight: bolder;
+    font-weight: normal;
     font-size: 1.2rem;
 }
 
 .survey-question {
-    font-weight: bold;
+    font-weight: normal;
     vertical-align: middle;
     padding-top: .15em;
     padding-bottom: .15em;
@@ -371,4 +371,30 @@ th.survey-answer {
         margin-top: 0;
         line-height: 24px;
     }
+}
+
+/* green buton */
+.green-button.input-main {
+    background-color: #43ac6a;
+    background-image: none;
+    border-radius: 3px;
+    border:transparent solid 1px;
+    box-shadow: 0px 0px 0px #666;
+    color: #fff;
+    text-shadow: none;
+    text-transform: none;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.green-button.input-main:hover:not(:disabled) {
+    background-color: #368a55;
+    background-image: none;
+    color: #fff;
 }

@@ -97,6 +97,15 @@ class PollBase(XBlock, ResourceMixin, PublishEventMixin):
     )
     feedback = String(default='', help=_("Text to display after the user votes."))
 
+    def ugettext(self, text):
+        """
+        Gacco uses old version of Xblock,
+        so copy 'ugettext' process from the latest version of Xblock. (#2)
+        """
+        runtime_service = self.runtime.service(self, "i18n")
+        runtime_ugettext = runtime_service.ugettext
+        return runtime_ugettext(text)
+
     def send_vote_event(self, choice_data):
         # Let the LMS know the user has answered the poll.
         self.runtime.publish(self, 'progress', {})

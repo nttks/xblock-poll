@@ -50,7 +50,7 @@
                 </tr>
             {% endfor %}
             </table>
-            <input class="input-main" type="button" name="poll-submit" value="{% trans 'Submit' %}" disabled />
+            <input class="green-button input-main" type="button" name="poll-submit" value="{% trans 'Submit Poll' %}" disabled />
         </form>
         <div class="poll-voting-thanks{% if not choices or can_vote %} poll-hidden{% endif %}"><span>{% trans 'Thank you.' %}</span></div>
         <div class="poll-submissions-count poll-hidden">

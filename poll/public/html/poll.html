@@ -32,7 +32,7 @@
           {% endfor %}
         </div>
       </fieldset>
-      <input class="input-main" type="button" name="poll-submit" value="{% trans 'Submit' %}" disabled/>
+      <input class="green-button input-main" type="button" name="poll-submit" value="{% trans 'Submit Poll' %}" disabled/>
     </form>
 
     <div class="poll-voting-thanks
@@ -41,9 +41,9 @@
     </div>
 
     <div class="poll-submissions-count poll-hidden">
-      {% blocktrans with submissions_count_s='<span class="poll-current-count">{{ submissions_count }}</span>' max_submissions_s='<span class="poll-max-submissions">{{ max_submissions }}</span>' %}
-        You have used {{ submissions_count_s }} out of {{ max_submissions_s }} submissions.
-      {% endblocktrans %}
+            {% blocktrans with submissions_count_s='<span class="poll-current-count">{{ submissions_count }}</span>' max_submissions_s='<span class="poll-max-submissions">{{ max_submissions }}</span>' %}
+                You have used {{ submissions_count_s }} out of {{ max_submissions_s }} submissions.
+            {% endblocktrans %}
     </div>
 
     {% if feedback %}

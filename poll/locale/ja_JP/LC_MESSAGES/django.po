@@ -1,0 +1,38 @@
+# edX translation file.
+# Copyright (C) 2018 edX
+#
+# Translators:
+# ahara121 <aharagacco@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: XBlocks\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: ahara121 <aharaagacco@gmail.com>\n"
+"PO-Revision-Date: 2018-04-25 10:00+0900\n"
+
+#: poll/public/html/poll.html
+msgid "Submit Poll"
+msgstr "提出"
+
+#: poll/public/html/poll.html
+#: poll/public/html/survey.html
+msgid "View results"
+msgstr "結果を参照"
+
+#: poll/public/html/poll.html
+#: poll/public/html/survey.html
+msgid "Thank you."
+msgstr "提出が完了しました。"
+
+#: poll/public/html/poll.html
+#: poll/public/html/survey.html
+msgid ""
+"\n"
+"                You have used %(submissions_count_s)s out of %(max_submissions_s)s submissions.\n"
+"            "
+msgstr ""
+"\n"
+"全%(max_submissions_s)s回中の%(submissions_count_s)s回の提出を既に実施"

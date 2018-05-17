@@ -162,6 +162,7 @@ function PollUtil (runtime, element, pollType) {
         }
         var can_vote = data['can_vote'];
         $('.poll-current-count', element).text(data['submissions_count']);
+        $('.poll-max-submissions', element).text(data['max_submissions']);
         if (data['max_submissions'] > 1) {
             $('.poll-submissions-count', element).show();
         }
