@@ -254,6 +254,7 @@ function PollEditUtil(runtime, element, pollType) {
         data['max_submissions'] = $('#poll-max-submissions', element).val();
         // Convert to boolean for transfer.
         data['private_results'] = eval($('#poll-private-results', element).val());
+        data['is_status_managed'] = eval($('#poll-is-status-managed', element).val());
 
         if (notify) {
             runtime.notify('save', {state: 'start', message: gettext("Saving")});
