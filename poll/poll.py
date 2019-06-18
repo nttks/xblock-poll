@@ -483,6 +483,8 @@ class PollBlock(PollBase):
             'feedback': self.feedback,
             'js_template': js_template,
             'max_submissions': self.max_submissions,
+            # for gacco
+            'can_is_status_managed': False,
         })
         return self.create_fragment(
             context, "public/html/poll_edit.html",
@@ -663,6 +665,12 @@ class SurveyBlock(PollBase):
         help=_("Total tally of answers from students.")
     )
     choices = Dict(help=_("The user's answers"), scope=Scope.user_state)
+    is_status_managed = Boolean(
+        display_name=_("Is status managed"),
+        help=_("Please set \"True\" if you want to make it status management target module."),
+        scope=Scope.settings,
+        default=False,
+    )
     event_namespace = 'xblock.survey'
 
     @XBlock.supports("multi_device")  # Mark as mobile-friendly
@@ -696,6 +704,8 @@ class SurveyBlock(PollBase):
             'can_view_private_results': self.can_view_private_results(),
             # a11y: Transfer block ID to enable creating unique ids for questions and answers in the template
             'block_id': self._get_block_id(),
+            # update attendance status for gacco
+            'update_attendance_status': '/courses/{}/update_attendance_status',
         })
 
         return self.create_fragment(
@@ -752,6 +762,9 @@ class SurveyBlock(PollBase):
             'js_template': js_template,
             'max_submissions': self.max_submissions,
             'multiquestion': True,
+            # for gacco
+            'can_is_status_managed': True,
+            'is_status_managed': self.is_status_managed,
         })
         return self.create_fragment(
             context, "public/html/poll_edit.html",
@@ -993,6 +1006,8 @@ class SurveyBlock(PollBase):
         answers = self.gather_items(data, result, self.ugettext('Answer'), 'answers', image=False)
         questions = self.gather_items(data, result, self.ugettext('Question'), 'questions')
 
+        is_status_managed = data.get('is_status_managed', '')
+
         if not result['success']:
             return result
 
@@ -1002,6 +1017,7 @@ class SurveyBlock(PollBase):
         self.private_results = private_results
         self.max_submissions = max_submissions
         self.block_name = block_name
+        self.is_status_managed = is_status_managed
 
         # Tally will not be updated until the next attempt to use it, per
         # scoping limitations.
