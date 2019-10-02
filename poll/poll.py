@@ -437,6 +437,12 @@ class PollBlock(PollBase, CSVExportMixin):
                  scope=Scope.user_state_summary,
                  help=_("Total tally of answers from students."))
     choice = String(scope=Scope.user_state, help=_("The student's answer"))
+    is_status_managed = Boolean(
+        display_name=_("Is status managed"),
+        help=_("Please set \"True\" if you want to make it status management target module."),
+        scope=Scope.settings,
+        default=False,
+    )
     event_namespace = 'xblock.poll'
 
     def clean_tally(self):
