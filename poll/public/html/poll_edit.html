@@ -10,6 +10,22 @@
                 <input class="input setting-input" name="display_name" id="poll-display-name" value="{{ display_name }}" type="text" />
             </div>
         </li>
+        {% if can_is_status_managed %}
+        <!-- Display when surveys. -->
+        <li class="field comp-setting-entry is-set">
+            <div class="wrapper-comp-setting">
+                <label class="label setting-label poll-setting-label" for="poll-is-status-managed">{% trans 'Is status managed' %}</label>
+                <select id="poll-is-status-managed" class="input setting-input" name="is_status_managed"
+                        aria-describedby="poll-is-status-managed">
+                    <option value="true" {% if is_status_managed %} selected{% endif %}>{% trans 'True' %}</option>
+                    <option value="false" {% if not is_status_managed %} selected{% endif %}>{% trans 'False' %}</option>
+                </select>
+                <span class="tip setting-help" id="poll-is-status-managed-help">
+                    {% trans 'Please set "True" if you want to make it status management target module' %}
+                </span>
+            </div>
+        </li>
+        {% endif %}
         {% if not multiquestion %}
             <li class="field comp-setting-entry is-set">
                 <h2><label for="poll-question-editor">{% trans 'Question/Prompt' %}</label></h2>

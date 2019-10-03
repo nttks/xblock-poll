@@ -1,7 +1,8 @@
 {% load i18n %}
 {{ js_template|safe }}
 <div class="poll-block themed-xblock" data-private="{% if private_results %}1{% endif %}"
-     data-can-vote="{% if can_vote %}1{% endif %}">
+     data-can-vote="{% if can_vote %}1{% endif %}"
+     data-update-attendance-status-url="{{ update_attendance_status }}">
     <div class="poll-block-form-wrapper">
         <h3 class="poll-header">{{block_name}}</h3>
         <form>
@@ -50,7 +51,7 @@
                 </tr>
             {% endfor %}
             </table>
-            <input class="input-main" type="button" name="poll-submit" value="{% trans 'Submit' %}" disabled />
+            <input class="green-button input-main" type="button" name="poll-submit" value="{% trans 'Submit Poll' %}" disabled />
         </form>
         <div class="poll-voting-thanks{% if not choices or can_vote %} poll-hidden{% endif %}"><span>{% trans 'Thank you.' %}</span></div>
         <div class="poll-submissions-count poll-hidden">
