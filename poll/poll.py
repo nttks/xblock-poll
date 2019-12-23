@@ -854,6 +854,8 @@ class SurveyBlock(PollBase, CSVExportMixin):
             'can_view_private_results': self.can_view_private_results(),
             # a11y: Transfer block ID to enable creating unique ids for questions and answers in the template
             'block_id': self._get_block_id(),
+            # update attendance status for gacco
+            'update_attendance_status': '/courses/{}/update_attendance_status',
         })
 
         return self.create_fragment(
