@@ -1,0 +1,31 @@
+# edX translation file.
+# Copyright (C) 2018 edX
+#
+# Translators:
+# ahara121 <aharagacco@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: XBlocks\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: ahara121 <aharaagacco@gmail.com>\n"
+"PO-Revision-Date: 2018-04-25 10:00+0900\n"
+
+#-#-#-#-#  Missing messages of discussion  #-#-#-#-#
+
+#: poll/public/handlebars/poll_results.handlebars
+#: poll/public/handlebars/survey_results.handlebars
+msgid "Submit Poll"
+msgstr "提出"
+
+#: poll/public/handlebars/poll_results.handlebars
+#: poll/public/handlebars/survey_results.handlebars
+msgid "Results"
+msgstr "結果"
+
+#: poll/public/handlebars/poll_results.handlebars
+#: poll/public/handlebars/survey_results.handlebars
+msgid "Results gathered from {total} respondent."
+msgstr "回答数　{total}"
